@@ -4,8 +4,9 @@
   "description": "Ceci est un site vitrine pour le restaurant quai antique",
   "main": "index.js",
   "scripts": {
-  "sass": "sass scss/main.scss css/main.css --watch --quiet-deps --silence-deprecation=import"
+  "sass": "sass --load-path=node_modules scss/main.scss css/main.css --watch --quiet-deps --silence-deprecation=import"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WedJ92/quai-antique.git"
