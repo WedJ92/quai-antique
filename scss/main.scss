@@ -44,3 +44,46 @@
     aspect-ratio: 4 / 3;
     object-fit: cover;
 }
+
+.image-card {
+    position: relative;
+
+    img {
+        transition: filter 0.3s;
+    }
+
+    .titre-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    &:hover {
+        .titre-image {
+            opacity: 1;
+        }
+        img {
+            filter: brightness(0.3);
+        }
+    }
+}
+
+// Écrans sans survol (téléphones, tablettes) : titre toujours visible
+@media (hover: none) {
+    .image-card {
+        .titre-image {
+            opacity: 1;
+        }
+        img {
+            filter: brightness(0.5);
+        }
+    }
+}
+
+.img-bas {
+    object-position: center bottom ;
+}
