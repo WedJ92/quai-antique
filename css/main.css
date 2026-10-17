@@ -11901,4 +11901,38 @@ main {
   object-fit: cover;
 }
 
+.image-card {
+  position: relative;
+}
+.image-card img {
+  transition: filter 0.3s;
+}
+.image-card .titre-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.image-card:hover .titre-image {
+  opacity: 1;
+}
+.image-card:hover img {
+  filter: brightness(0.3);
+}
+
+@media (hover: none) {
+  .image-card .titre-image {
+    opacity: 1;
+  }
+  .image-card img {
+    filter: brightness(0.5);
+  }
+}
+.img-bas {
+  object-position: center bottom;
+}
+
 /*# sourceMappingURL=main.css.map */
