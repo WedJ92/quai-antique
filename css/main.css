@@ -11870,4 +11870,35 @@ main {
   flex: 1;
 }
 
+.hero-scene {
+  position: relative;
+}
+.hero-scene::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+}
+.hero-scene > * {
+  position: relative;
+}
+.hero-scene .hero-scene-content {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-section {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
 /*# sourceMappingURL=main.css.map */
