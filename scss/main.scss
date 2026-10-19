@@ -62,8 +62,21 @@
         transition: opacity 0.3s;
     }
 
+    .action-image-buttons {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
     &:hover {
-        .titre-image {
+        .titre-image,
+        .action-image-buttons {
             opacity: 1;
         }
         img {
@@ -72,18 +85,15 @@
     }
 }
 
-// Écrans sans survol (téléphones, tablettes) : titre toujours visible
+// Écrans sans survol (téléphones, tablettes) : titre et boutons toujours visibles
 @media (hover: none) {
     .image-card {
-        .titre-image {
+        .titre-image,
+        .action-image-buttons {
             opacity: 1;
         }
         img {
             filter: brightness(0.5);
         }
     }
-}
-
-.img-bas {
-    object-position: center bottom ;
 }
