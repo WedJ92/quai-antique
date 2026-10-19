@@ -11916,7 +11916,19 @@ main {
   opacity: 0;
   transition: opacity 0.3s;
 }
-.image-card:hover .titre-image {
+.image-card .action-image-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.image-card:hover .titre-image,
+.image-card:hover .action-image-buttons {
   opacity: 1;
 }
 .image-card:hover img {
@@ -11924,15 +11936,13 @@ main {
 }
 
 @media (hover: none) {
-  .image-card .titre-image {
+  .image-card .titre-image,
+  .image-card .action-image-buttons {
     opacity: 1;
   }
   .image-card img {
     filter: brightness(0.5);
   }
-}
-.img-bas {
-  object-position: center bottom;
 }
 
 /*# sourceMappingURL=main.css.map */
