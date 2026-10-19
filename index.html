@@ -2,79 +2,84 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quai Antique</title>
-    <link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quai Antique</title>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
-    <header>
-  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <div class="container">
+        <a class="navbar-brand" href="/" onclick="route(event)">
+          <i class="bi bi-cup-hot"></i> Le Quai Antique
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/" onclick="route(event)">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="/galerie" onclick="route(event)">Galerie</a></li>
+            <li class="nav-item"><a class="nav-link" href="/carte" onclick="route(event)">La carte</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-person-circle"></i> Mon compte
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="/signin" onclick="route(event)">Connexion</a></li>
+                <li><a class="dropdown-item" href="/signup" onclick="route(event)">Inscription</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/account" onclick="route(event)">Mes informations</a></li>
+                <li><a class="dropdown-item" href="/reservation" onclick="route(event)">Mes réservations</a></li>
+              </ul>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-primary" href="/reservation" onclick="route(event)">Réserver</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main-page">
+    <!-- Le contenu de la page sera injecté ici -->
+  </main>
+  <footer class="bg-dark text-white text-center footer py-4">
     <div class="container">
-      <a class="navbar-brand" href="/" onclick="route(event)">
-        <i class="bi bi-cup-hot"></i> Le Quai Antique
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/" onclick="route(event)">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="/galerie" onclick="route(event)">Galerie</a></li>
-          <li class="nav-item"><a class="nav-link" href="/carte" onclick="route(event)">La carte</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-person-circle"></i> Mon compte
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="/signin" onclick="route(event)">Connexion</a></li>
-              <li><a class="dropdown-item" href="/signup" onclick="route(event)">Inscription</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/mes-reservations" onclick="route(event)">Mes réservations</a></li>
-            </ul>
-          </li>
-          <li class="nav-item ms-lg-2">
-            <a class="btn btn-primary" href="/reservation" onclick="route(event)">Réserver</a>
-          </li>
-        </ul>
+      <div class="row gy-3">
+        <div class="col-12 col-lg-4">
+          <h3 class="h5 text-primary">Nos horaires</h3>
+          <p class="mb-0">Du mardi au dimanche<br>12h00 – 14h00 · 19h00 – 22h00</p>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h3 class="h5 text-primary">Nous trouver</h3>
+          <address class="mb-0">
+            Le Quai Antique<br>
+            Quai des Allobroges<br>
+            73000 Chambéry<br>
+            <a href="tel:+33401010101" class="link-light">04 01 01 01 01</a>
+          </address>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h3 class="h5 text-primary">Nous suivre</h3>
+          <a href="#" class="link-light fs-4 me-3" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="link-light fs-4" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        </div>
       </div>
+      <p class="small text-white-50 mt-4 mb-0">© 2026 Le Quai Antique · Tous droits réservés</p>
     </div>
-  </nav>
-</header>
-    <main id="main-page">
-        <!-- Le contenu de la page sera injecté ici -->
-    </main>
-   <footer class="bg-dark text-white text-center footer py-4">
-  <div class="container">
-    <div class="row gy-3">
-      <div class="col-12 col-lg-4">
-        <h3 class="h5 text-primary">Nos horaires</h3>
-        <p class="mb-0">Du mardi au dimanche<br>12h00 – 14h00 · 19h00 – 22h00</p>
-      </div>
-      <div class="col-6 col-lg-4">
-        <h3 class="h5 text-primary">Nous trouver</h3>
-        <address class="mb-0">
-          Le Quai Antique<br>
-          Quai des Allobroges<br>
-          73000 Chambéry<br>
-          <a href="tel:+33401010101" class="link-light">04 01 01 01 01</a>
-        </address>
-      </div>
-      <div class="col-6 col-lg-4">
-        <h3 class="h5 text-primary">Nous suivre</h3>
-        <a href="#" class="link-light fs-4 me-3" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="link-light fs-4" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-      </div>
-    </div>
-    <p class="small text-white-50 mt-4 mb-0">© 2026 Le Quai Antique · Tous droits réservés</p>
-  </div>
-</footer>
+  </footer>
 
-    
 
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="module" src="/Router/Router.js"></script>
+
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/Router/Router.js"></script>
 </body>
 
 </html>
