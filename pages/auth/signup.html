@@ -9,13 +9,15 @@
         <div class="col-md-6 col-lg-4">
             <form>
                 <div class="mb-3">
-                    <label for="NomInput" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="NomInput" placeholder="Votre nom" name="Nom" autocomplete="family-name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="PrenomInput" class="form-label">Prénom</label>
-                    <input type="text" class="form-control" id="PrenomInput" placeholder="Votre prénom" name="Prenom" autocomplete="given-name" required>
-                </div>
+    <label for="NomInput" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="NomInput" placeholder="Votre nom" name="Nom" autocomplete="family-name" required>
+    <div class="invalid-feedback">Le nom est obligatoire.</div>
+</div>
+<div class="mb-3">
+    <label for="PrenomInput" class="form-label">Prénom</label>
+    <input type="text" class="form-control" id="PrenomInput" placeholder="Votre prénom" name="Prenom" autocomplete="given-name" required>
+    <div class="invalid-feedback">Le prénom est obligatoire.</div>
+</div>
                 <div class="mb-3">
                     <label for="EmailInput" class="form-label">Email</label>
                     <input type="email" class="form-control" id="EmailInput" placeholder="test@mail.fr" name="Email" autocomplete="email" required>
@@ -28,6 +30,7 @@
                 <div class="mb-3">
                     <label for="ValidatePasswordInput" class="form-label">Confirmez votre mot de passe</label>
                     <input type="password" class="form-control" id="ValidatePasswordInput" name="PasswordConfirm" autocomplete="new-password" required>
+                    <div class="invalid-feedback">Les mots de passe ne correspondent pas.</div>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Inscription</button>
