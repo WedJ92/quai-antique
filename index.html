@@ -30,21 +30,18 @@
                 <i class="bi bi-person-circle"></i> Mon compte
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="/signin" onclick="route(event)">Connexion</a></li>
-                <li><a class="dropdown-item" href="/signup" onclick="route(event)">Inscription</a></li>
-                <li>
+                <li data-show="disconnected"><a class="dropdown-item" href="/signin" onclick="route(event)">Connexion</a></li>
+                <li data-show="disconnected"><a class="dropdown-item" href="/signup" onclick="route(event)">Inscription</a></li>
+                <li data-show="connected"><a class="dropdown-item" href="/account" onclick="route(event)">Mes informations</a></li>
+                <li data-show="connected"><a class="dropdown-item" href="/allResa" onclick="route(event)">Mes réservations</a></li>
+                <li data-show="connected">
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="/account" onclick="route(event)">Mes informations</a></li>
-                <li><a class="dropdown-item" href="/allResa" onclick="route(event)">Mes réservations</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><button type="button" class="dropdown-item text-danger" id="signout-btn">Déconnexion</button></li>
+                <li data-show="connected"><button type="button" class="dropdown-item text-danger" id="signout-btn">Déconnexion</button></li>
               </ul>
             </li>
-            <li class="nav-item ms-lg-2">
-              <a class="btn btn-primary" href="/reservation" onclick="route(event)">Réserver</a>
+            <li  class="nav-item ms-lg-2">
+              <a class="btn btn-primary" href="/reserver" onclick="route(event)">Réserver</a>
             </li>
           </ul>
         </div>
