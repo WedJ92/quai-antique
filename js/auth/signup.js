@@ -38,7 +38,7 @@ function validateRequired(input) {
 
 // Vérifie que l'email a la forme texte@texte.texte
 function validateMail(input) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/;
     const mailUser = input.value.trim();
     if (emailRegex.test(mailUser)) {
         input.classList.add("is-valid");
