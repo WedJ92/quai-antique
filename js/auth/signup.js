@@ -5,12 +5,15 @@ const inputPreNom = document.getElementById("PrenomInput");
 const inputMail = document.getElementById("EmailInput");
 const inputPassword = document.getElementById("PasswordInput");
 const inputValidationPassword = document.getElementById("ValidatePasswordInput",);
+const btnValidation = document.getElementById("btn-validation-inscription");
+const formInscription = document.getElementById("formulaireInscription");
 
 inputNom.addEventListener("input", validateForm);
 inputPreNom.addEventListener("input", validateForm);
 inputMail.addEventListener("input", validateForm);
 inputPassword.addEventListener("input", validateForm);
 inputValidationPassword.addEventListener("input", validateForm);
+btnValidation.addEventListener("click", inscrireUtilisateur);
 
 // Fonction permettant de valider tout le formulaire
 function validateForm() {
@@ -78,4 +81,41 @@ function validateConfirmationPassword(inputPwd, inputConfirmPwd) {
         inputConfirmPwd.classList.add("is-invalid");
         return false;
     }
+}
+
+// Envoie l'inscription à l'API
+function inscrireUtilisateur() {
+    const myHeaders = new Headers();
+    const dataForm = new FormData(formInscription);
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        "firstName": dataForm.get("Prenom"),
+        "lastName": dataForm.get("Nom"),
+        "email": dataForm.get("Email"),
+        "password": dataForm.get("Password")
+    });
+
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
+
+        fetch(apiUrl + "registration", requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erreur HTTP : " + response.status);
+            }
+            return response.json();
+        })
+        .then(() => {
+            alert("Bravo " + inputPreNom.value.trim()+ ", vous êtes maintenant inscrit, vous pouvez vous connecter.");
+            document.location.href = "/signin";
+        })
+        .catch(error => {
+            console.error("Erreur lors de l'inscription", error);
+            alert("Erreur lors de l'inscription. Cet email est peut-être déjà utilisé.");
+        });
 }
