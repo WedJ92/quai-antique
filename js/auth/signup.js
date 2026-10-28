@@ -103,13 +103,19 @@ function inscrireUtilisateur() {
         redirect: "follow"
     };
 
-    fetch(apiUrl + "registration", requestOptions)
+        fetch(apiUrl + "registration", requestOptions)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erreur HTTP : " + response.status);
             }
             return response.json();
         })
-        .then(result => console.log(result))
-        .catch(error => console.error("Erreur lors de l'inscription", error));
+        .then(() => {
+            alert("Bravo " + inputPreNom.value.trim()+ ", vous êtes maintenant inscrit, vous pouvez vous connecter.");
+            document.location.href = "/signin";
+        })
+        .catch(error => {
+            console.error("Erreur lors de l'inscription", error);
+            alert("Erreur lors de l'inscription. Cet email est peut-être déjà utilisé.");
+        });
 }
