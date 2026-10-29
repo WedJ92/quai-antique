@@ -1,0 +1,137 @@
+<section class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Galerie</h1>
+    </div>
+</section>
+
+<section>
+    <div class="container p-4">
+
+        <div class="text-end mb-3">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal">
+                <i class="bi bi-plus-lg"></i> Ajouter une photo
+            </button>
+        </div>
+
+        <div class="row row-cols-2 row-cols-lg-3 g-3">
+
+            <div class="col">
+                <div class="image-card text-white">
+                    <img class="w-100 rounded img-section img-bas" src="/images/galerie/entree1.jpg" alt="Tartare de truite du lac du Bourget, crème au raifort">
+                    <p class="titre-image text-center m-0">Tartare de truite du lac du Bourget</p>
+                    <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier la photo"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer la photo"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="image-card text-white">
+                    <img class="w-100 rounded img-section" src="/images/galerie/plat1.jpg" alt="Filet de bœuf, gratin dauphinois et jus corsé">
+                    <p class="titre-image text-center m-0">Filet de bœuf, gratin dauphinois</p>
+                    <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier la photo"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer la photo"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="image-card text-white">
+                    <img class="w-100 rounded img-section" src="/images/galerie/dessert1.jpg" alt="Fondant au chocolat, cœur coulant">
+                    <p class="titre-image text-center m-0">Fondant au chocolat</p>
+                    <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier la photo"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer la photo"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="image-card text-white">
+                    <img class="w-100 rounded img-section" src="/images/galerie/entree2.jpg" alt="Œuf parfait, crème de Beaufort et lard croustillant">
+                    <p class="titre-image text-center m-0">Œuf parfait au Beaufort</p>
+                    <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier la photo"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer la photo"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="image-card text-white">
+                    <img class="w-100 rounded img-section" src="/images/galerie/plat2.jpg" alt="Suprême de volaille, sauce morilles">
+                    <p class="titre-image text-center m-0">Suprême de volaille aux morilles</p>
+                    <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier la photo"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer la photo"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="image-card text-white">
+                    <img class="w-100 rounded img-section" src="/images/galerie/dessert2.jpg" alt="Tarte aux myrtilles des Alpes">
+                    <p class="titre-image text-center m-0">Tarte aux myrtilles des Alpes</p>
+                    <div class="action-image-buttons">
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal" aria-label="Modifier la photo"><i class="bi bi-pencil-square"></i></button>
+                        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#DeletePhotoModal" aria-label="Supprimer la photo"><i class="bi bi-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="text-center pb-4">
+    <a href="/reserver" onclick="route(event)" class="btn btn-primary">Réserver une table</a>
+</div>
+
+<!-- Modale d'édition -->
+<div class="modal fade" id="EditionPhotoModal" tabindex="-1" aria-labelledby="EditionPhotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="EditionPhotoModalLabel">Modifier la photo</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="NamePhotoInput" class="form-label">Titre</label>
+                        <input type="text" class="form-control" id="NamePhotoInput" placeholder="Tarte aux myrtilles des Alpes" name="Titre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ImageInput" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="ImageInput" name="Image" accept="image/jpeg, image/png, image/webp" aria-describedby="ImageHelp">
+                        <div id="ImageHelp" class="form-text">JPG, PNG ou WebP. Laisser vide pour garder l'image actuelle.</div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modale de suppression -->
+<div class="modal fade" id="DeletePhotoModal" tabindex="-1" aria-labelledby="DeletePhotoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="DeletePhotoModalLabel">Supprimer la photo</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <p class="m-0">Voulez-vous vraiment supprimer cette photo ? Cette action est définitive.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-danger">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>

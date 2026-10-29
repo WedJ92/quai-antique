@@ -1,0 +1,29 @@
+{
+  "name": "quai-antique",
+  "version": "1.0.0",
+  "description": "Ceci est un site vitrine pour le restaurant quai antique",
+  "main": "index.js",
+  "scripts": {
+  "sass": "sass --load-path=node_modules scss/main.scss css/main.css --watch --quiet-deps --silence-deprecation=import"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WedJ92/quai-antique.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/WedJ92/quai-antique/issues"
+  },
+  "homepage": "https://github.com/WedJ92/quai-antique#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.2"
+  },
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}
