@@ -1,0 +1,31 @@
+name: 🚀 Deploy website on push
+on:
+  push:
+    branches:
+      - main
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ftp-w-quaiantique.alwaysdata.net
+          username: w-quaiantique
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: /www/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/scss/**
+            package.json
+            package-lock.json
+            serve.json
+            README.md
