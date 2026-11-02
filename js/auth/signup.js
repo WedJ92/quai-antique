@@ -14,15 +14,17 @@ inputMail.addEventListener("input", validateForm);
 inputPassword.addEventListener("input", validateForm);
 inputValidationPassword.addEventListener("input", validateForm);
 btnValidation.addEventListener("click", inscrireUtilisateur);
+btnValidation.disabled = true; // désactivé tant que le formulaire n'est pas valide
 
-// Fonction permettant de valider tout le formulaire
+// Valide tout le formulaire et n'active le bouton que si tout est valide
 function validateForm() {
+    const nomOk = validateRequired(inputNom);
+    const prenomOk = validateRequired(inputPreNom);
+    const mailOk = validateMail(inputMail);
+    const passwordOk = validatePassword(inputPassword);
+    const confirmOk = validateConfirmationPassword(inputPassword, inputValidationPassword);
 
-    validateRequired(inputNom);
-    validateRequired(inputPreNom);
-    validateMail(inputMail);
-    validatePassword(inputPassword);
-    validateConfirmationPassword(inputPassword, inputValidationPassword);
+    btnValidation.disabled = !(nomOk && prenomOk && mailOk && passwordOk && confirmOk);
 }
 
 
@@ -103,7 +105,7 @@ function inscrireUtilisateur() {
         redirect: "follow"
     };
 
-        fetch(apiUrl + "registration", requestOptions)
+    fetch(apiUrl + "registration", requestOptions)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erreur HTTP : " + response.status);
@@ -111,7 +113,7 @@ function inscrireUtilisateur() {
             return response.json();
         })
         .then(() => {
-            alert("Bravo " + inputPreNom.value.trim()+ ", vous êtes maintenant inscrit, vous pouvez vous connecter.");
+            alert("Bravo " + inputPreNom.value.trim() + ", vous êtes maintenant inscrit, vous pouvez vous connecter.");
             document.location.href = "/signin";
         })
         .catch(error => {
