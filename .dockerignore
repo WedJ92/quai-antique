@@ -1,0 +1,13 @@
+# Fichiers à NE PAS copier dans l'image du front
+.git
+.github
+node_modules
+scss
+.env
+.env.example
+Dockerfile
+docker-compose.yml
+package.json
+package-lock.json
+serve.json
+README.md
